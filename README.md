@@ -10,8 +10,9 @@ Backend folder contains service connected to database, which is MongoDB in this 
 ## Setup MongoDB locally
 
 If you haven't installed it, here is the official tutorial of installation : https://docs.mongodb.com/manual/installation/
+Next, run MongoDB at local.
 
-## Run MongoDB at local and setup data
+## Setup data
 
     cd ./backend
     node /src/data/insert.js
@@ -102,7 +103,36 @@ Design Mockup： https://dribbble.com/shots/5311395-Shopping-Cart/attachments/53
 - 使用 redux thunk 中间件，从后端获取数据,不再使用 mock data，组件中的 props 为后段获取到的数据
 - 修改功能，使变更商品数量时同时更改数据库中的数量
 - 添加测试
-- 添加 Dockerfile
+- 添加 Dockerfile & docker-compose file
+
+## Features
+
+### 前端
+
+- 点击 remove，可以删除页面上的 item
+- 点击 remove，，同步删除 db.json 中的相应数据
+- 点击 remove，item 数量相应减少
+- 手动添加 item 数据，购物车新增添加的 item card
+- 手动添加 item 数据，页面的 item 数量相应增加
+- 手动删除 item 数据，购物车减少删除的 item card
+- 手动删除 item 数据，页面的 item 数量相应减少
+- 点击 item card 中的 ➕，对应的 quantity +1
+- 点击 item card 中的 ➕，对应的 total 价格重新计算 (quantity\*price)
+- 点击 item card 中的 ➕，所有产品的总价重新计算 Σ(quantity\*price)
+- 点击 item card 中的 ➖，对应的 quantity -1
+- 点击 item card 中的 ➖，对应的 total 价格重新计算 (quantity\*price)
+- 点击 item card 中的 ➖，所有产品的总价重新计算 Σ(quantity\*price)
+- 点击 item card 中的 ➖，最小值为 1
+- 点击 item card 中的 ➖，当 quantity 为 1 时，提示已达到最小值
+- 连接后端之后，点击 remove，同步删除 database 中的对应产品数据
+- 连接后端之后，点击 ➕，同步更改 database 中的对应商品的 quantity
+- 连接后端之后，点击 ➖，同步更改 database 中的对应商品的 quantity
+
+### 后端
+
+- 分为 Controller-Repository-Service 三层
+- 包含 get/delete/patch 接口。分别接收 获取商品列表/删除商品/更改数量 请求。
+- 通过前端/postman 等发送请求时，MongoDB 中的数据相对应变化。
 
 ## 组件划分
 
