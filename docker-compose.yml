@@ -2,23 +2,22 @@ version: '3'
 services:
   frontend:
     build: ./frontend
+    container_name: shopping_cart_frontend
     ports:
       - 3000:3000
     depends_on:
       - backend
   backend:
     build: ./backend
+    container_name: shopping_cart_backend
     ports:
       - 3001:3001
     depends_on:
       - mongo-db
     links:
-      - mongo-db
+      - mongo-db:mongodb
   mongo-db:
     image: mongo
     restart: always
     ports:
       - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: 123456

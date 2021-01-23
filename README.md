@@ -48,7 +48,17 @@ Now, you can visit http://localhost:3000 to view the shopping cart in the browse
 
 ## Deploy the project with Docker
 
+Modify the link to MongoDB in backend/src/repository/cartRepository.js from
+`mongodb://localhost:27017/shoppingCart`
+to `mongodb://mongodb/shoppingCart` Then
+
     docker-compose up -d
+    /* get into the container */
+    docker exec -it shopping_cart_backend bash
+    /* move to the directory */
+    cd src/data/
+    /* setup data */
+    node insert.js
 
 ## 作业要求
 
