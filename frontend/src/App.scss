@@ -1,0 +1,31 @@
+@import './colors.scss';
+
+button {
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.content {
+  width: 1350px;
+  height: 800px;
+  margin: 80px auto;
+  display: flex;
+  box-shadow: 5px 10px 18px $box-shadow;
+  line-height: 30px;
+}
+
+.split {
+  border: 1px solid $horizon-line;
+}
+
+.title {
+  display: flex;
+  font-size: 28px;
+  height: 100px;
+  padding: 30px 0;
+  align-items: flex-end;
+  justify-content: space-between;
+}

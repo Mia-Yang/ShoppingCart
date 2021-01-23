@@ -1,0 +1,65 @@
+@import '../../colors.scss';
+
+.summary {
+  background-color: $summary-background;
+  width: 30%;
+  padding: 45px;
+}
+
+.apply {
+  background-color: $hot-pink;
+  color: white;
+  height: 45px;
+  width: 100px;
+  font-size: 16px;
+}
+
+.calculate {
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 0;
+}
+
+.checkout {
+  background-color: $light-purple;
+  color: white;
+  height: 45px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.promo {
+  height: 45px;
+  width: 100%;
+  border: none;
+  color: $placeholder;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+#shipping {
+  height: 45px;
+  width: 100%;
+  border: none;
+  color: $placeholder;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.summary-subtitle {
+  color: $placeholder;
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 20px 0;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-subtitle:first-child {
+  margin: 0;
+}
