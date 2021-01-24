@@ -51,7 +51,8 @@ to `mongodb://mongodb/shoppingCart`
     docker-compose up -d
 
 after container is running, you can visit
-http://localhost:3000 to view the shopping cart.
+http://localhost:3000 to view the shopping cart.  
+To stop it, press **ctrl+c** or **docker-compose stop**
 
 ## 作业要求
 
