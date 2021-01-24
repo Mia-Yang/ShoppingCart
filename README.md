@@ -12,22 +12,17 @@ Backend folder contains service connected to database, which is MongoDB in this 
 If you haven't installed it, here is the official tutorial of installation : https://docs.mongodb.com/manual/installation/
 Next, run MongoDB at local.
 
-## Setup data
-
-    cd ./backend
-    node /src/data/insert.js
-
-Connect with MongoDB, and setup some data into it.
-
-## Start Node
+## Start Node and Setup Data
 
     /* install dependencies */
     npm install
-    /* start node */
+    /* start node and setup data */
     npm start
 
 When the terminal shows output as
 
+    MongoDB Connected...
+    node src/data/insert.js exited with code 0
     MongoDB Connected...
     App is running...
 
@@ -50,15 +45,13 @@ Now, you can visit http://localhost:3000 to view the shopping cart in the browse
 
 Modify the link to MongoDB in backend/src/repository/cartRepository.js from
 `mongodb://localhost:27017/shoppingCart`
-to `mongodb://mongodb/shoppingCart` Then
+to `mongodb://mongodb/shoppingCart`  
+ Then run the command below
 
     docker-compose up -d
-    /* get into the container */
-    docker exec -it shopping_cart_backend bash
-    /* move to the directory */
-    cd src/data/
-    /* setup data */
-    node insert.js
+
+after container is running, you can visit
+http://localhost:3000 to view the shopping cart.
 
 ## 作业要求
 
