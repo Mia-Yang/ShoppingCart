@@ -43,7 +43,7 @@ Now, you can visit http://localhost:3000 to view the shopping cart in the browse
 
 ## Deploy the project with Docker
 
-Modify the link to MongoDB in backend/src/repository/cartRepository.js from
+The project provide Dockerfile and docker compose file so that you can deploy the project with docker. Just modify the link to MongoDB in line 3 of [backend/src/repository/cartRepository.js] from
 `mongodb://localhost:27017/shoppingCart`
 to `mongodb://mongodb/shoppingCart`  
  Then run the command below
