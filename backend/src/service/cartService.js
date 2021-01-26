@@ -1,11 +1,20 @@
 const { productSchemaModel } = require('../repository/cartRepository');
 
+const convertToUpperCase = (data) => {
+  for (let key in data) {
+    if (key === 'name' || key === 'label') {
+      data[key] = data[key].toUpperCase();
+    }
+  }
+};
+
 const getAllProducts = (req, res) => {
   return new Promise((resolve, reject) => {
     productSchemaModel.find((err, data) => {
       if (err) {
         reject(res.send('get products failed'));
       } else {
+        data.forEach((prod) => convertToUpperCase(prod));
         resolve(res.send(data));
       }
     });
@@ -18,6 +27,7 @@ const getProductById = (req, res) => {
       if (err) {
         reject(res.send('get product failed'));
       } else {
+        data.forEach((prod) => convertToUpperCase(prod));
         resolve(res.send(data));
       }
     });
