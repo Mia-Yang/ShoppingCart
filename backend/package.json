@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "concurrently \"node src/data/insert.js\" \"nodemon index.js\""
+    "server": "nodemon index.js",
+    "insert": "node src/data/insert.js",
+    "start": "npm run insert && npm run server"
   },
   "author": "",
   "license": "ISC",
