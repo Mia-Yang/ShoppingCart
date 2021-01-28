@@ -6,6 +6,7 @@ const convertToUpperCase = (data) => {
       data[key] = data[key].toUpperCase();
     }
   }
+  return data;
 };
 
 const getAllProducts = (req, res) => {
@@ -91,4 +92,5 @@ module.exports = {
   addProduct,
   deleteProduct,
   changeQuantity,
+  convertToUpperCase,
 };
